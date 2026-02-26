@@ -53,6 +53,10 @@ body {
   min-height: calc(100vh - 220px);
 }
 
+.mobile-footer {
+  display: none;
+}
+
 @media (max-width: 600px) {
   #root {
     padding: 36px 20px 60px;
@@ -60,5 +64,32 @@ body {
 
   .page--home {
     min-height: calc(100vh - 180px);
+  }
+
+  .mobile-footer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-top: 40px;
+    border-top: 1px solid #e8e8e6;
+    margin-top: 40px;
+  }
+
+  .footer-icon {
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1.5px solid #d8d8d6;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .footer-icon:active {
+    color: #4E6BD7;
+    border-color: #4E6BD7;
   }
 }

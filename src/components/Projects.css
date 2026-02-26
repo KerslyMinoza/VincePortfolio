@@ -93,3 +93,34 @@
   border-color: #4E6BD7;
   transform: translateY(-1px);
 }
+
+@media (max-width: 600px) {
+  .project-list {
+    gap: 48px;
+  }
+
+  .project-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .project-info {
+    padding-top: 0;
+  }
+
+  .project-subtitle {
+    margin-bottom: 16px;
+  }
+
+  .btn-outline-sm {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+}

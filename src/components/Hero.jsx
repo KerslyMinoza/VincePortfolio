@@ -17,7 +17,7 @@ const EmailIcon = () => (
 )
 
 function Hero() {
-  const EMAIL = 'vinceaneva@gmail.com' // Replace with your actual email
+  const EMAIL = 'vinceeric.adeva27@gmail.com'
 
   return (
     <section className="hero">
