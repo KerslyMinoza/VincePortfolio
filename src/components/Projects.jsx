@@ -1,4 +1,5 @@
 import './Projects.css'
+import projects from '../data/projects'
 
 const ArrowIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -7,31 +8,17 @@ const ArrowIcon = () => (
   </svg>
 )
 
-const projects = [
-  {
-    id: 1,
-    title: 'Media Monster Social Media',
-    subtitle: 'Created social media graphics for Media Monster, a video editing app, through a subcontracting opportunity with another virtual assistant. Media Monster offers various features, including the ability to record videos while playing music in the background and other creative editing tools.',
-    link: '#',
-    tags: ['#canva', '#videoediting', '#graphics'],
-  },
-  {
-    id: 2,
-    title: 'Astrea Real Estate',
-    subtitle: 'Astrea Real Estate was a practice project where I developed a complete branding package, including a brochure and social media graphics. This task was assigned by my senior designer as preparation for future client projects. Through this experience, I enhanced my skills in Canva and Adobe Illustrator.',
-    link: '#',
-    tags: ['#canva', '#graphics', '#branding', '#socialmedia'],
-  },
-]
-
-function Projects() {
+function Projects({ onSelect }) {
   return (
     <section className="projects">
       <h2 className="section-title">My Projects</h2>
       <div className="project-list">
         {projects.map((project) => (
           <div className="project-card" key={project.id}>
-            <div className="project-image" />
+            {project.thumbnail
+              ? <img src={project.thumbnail} alt={project.title} className="project-image project-image--photo" />
+              : <div className="project-image" />
+            }
             <div className="project-info">
               <h3 className="project-title">{project.title}</h3>
               {project.tags && (
@@ -42,15 +29,13 @@ function Projects() {
                 </div>
               )}
               <p className="project-subtitle">{project.subtitle}</p>
-              <a
-                href={project.link}
+              <button
                 className="btn btn-outline-sm"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => onSelect(project.id)}
               >
                 View Project
                 <ArrowIcon />
-              </a>
+              </button>
             </div>
           </div>
         ))}

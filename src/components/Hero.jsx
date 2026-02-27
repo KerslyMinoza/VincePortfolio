@@ -31,18 +31,14 @@ function Hero() {
 
 With strong attention to detail and a proactive mindset, I aim to streamline your operations so you can focus on what truly matters, growing your business</p>
         <div className="hero-buttons">
-          <button
+          <a
+            href="/Vince Eric Adeva - CV.pdf"
+            download="Vince Eric Adeva - CV.pdf"
             className="btn btn-outline"
-            onClick={() => {
-              const link = document.createElement('a')
-              link.href = '/resume.pdf'
-              link.download = 'Vince_Eric_Aneva_Resume.pdf'
-              link.click()
-            }}
           >
             <DownloadIcon />
             Download Resume
-          </button>
+          </a>
           <a
             href={`mailto:${EMAIL}`}
             className="btn btn-dark"

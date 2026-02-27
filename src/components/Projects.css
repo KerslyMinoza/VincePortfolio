@@ -35,6 +35,10 @@
   border-radius: 2px;
 }
 
+.project-image--photo {
+  object-fit: cover;
+}
+
 .project-info {
   display: flex;
   flex-direction: column;

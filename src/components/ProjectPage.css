@@ -1,0 +1,157 @@
+.project-page {
+  padding-top: 32px;
+  animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 40px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #4E6BD7;
+  transform: translateX(-3px);
+}
+
+.project-page-header {
+  margin-bottom: 48px;
+}
+
+.project-page-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.project-page-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.project-tag {
+  font-size: 11px;
+  font-weight: 400;
+  color: #1a6b8a;
+  background-color: #dff1f8;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.project-page-description {
+  font-size: 15px;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.75;
+  max-width: 680px;
+}
+
+.project-page-tools {
+  margin-bottom: 56px;
+}
+
+.project-section-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-pill {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  background-color: #f0f0ee;
+  border: 1px solid #d8d8d6;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+.project-page-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding-bottom: 80px;
+}
+
+.image-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.image-item figcaption {
+  font-size: 13px;
+  color: #888;
+  font-weight: 400;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 220px;
+  background-color: #e8e8e6;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-placeholder span {
+  font-size: 13px;
+  color: #aaa;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .project-page-title {
+    font-size: 26px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-item img,
+  .image-placeholder {
+    height: 200px;
+  }
+}

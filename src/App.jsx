@@ -3,6 +3,8 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
 import OtherExperiences from './components/OtherExperiences'
+import ProjectPage from './components/ProjectPage'
+import projects from './data/projects'
 import './App.css'
 
 const LinkedInIcon = () => (
@@ -19,10 +21,23 @@ const MailIcon = () => (
 
 function App() {
   const [page, setPage] = useState('home')
+  const [projectId, setProjectId] = useState(null)
+
+  function handleSelectProject(id) {
+    setProjectId(id)
+    setPage('project')
+  }
+
+  function handleBackToProjects() {
+    setPage('works')
+    setProjectId(null)
+  }
+
+  const activeProject = projects.find((p) => p.id === projectId)
 
   return (
     <div className="app">
-      <Nav current={page} onChange={setPage} />
+      <Nav current={page === 'project' ? 'works' : page} onChange={(p) => { setPage(p); setProjectId(null) }} />
       {page === 'home' && (
         <div key="home" className="page page--home">
           <Hero />
@@ -30,7 +45,12 @@ function App() {
       )}
       {page === 'works' && (
         <div key="works" className="page">
-          <Projects />
+          <Projects onSelect={handleSelectProject} />
+        </div>
+      )}
+      {page === 'project' && activeProject && (
+        <div key={`project-${projectId}`} className="page">
+          <ProjectPage project={activeProject} onBack={handleBackToProjects} />
         </div>
       )}
       {page === 'experiences' && (
