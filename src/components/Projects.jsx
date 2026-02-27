@@ -16,7 +16,7 @@ function Projects({ onSelect }) {
         {projects.map((project) => (
           <div className="project-card" key={project.id}>
             {project.thumbnail
-              ? <img src={project.thumbnail} alt={project.title} className="project-image project-image--photo" />
+              ? <img src={project.thumbnail} alt={project.title} className="project-image project-image--photo project-image--clickable" onClick={() => onSelect(project.id)} />
               : <div className="project-image" />
             }
             <div className="project-info">

@@ -39,6 +39,15 @@
   object-fit: cover;
 }
 
+.project-image--clickable {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.project-image--clickable:hover {
+  opacity: 0.85;
+}
+
 .project-info {
   display: flex;
   flex-direction: column;
